@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service RequestReply {
+    rpc Send(Request) returns (Reply);
+    rpc Retrieve(Request) returns (Reply);
+}
+
+message Request {
+    string to = 1;
+    string text = 2;
+}
+
+message Reply {
+    bool recd = 1;
+}
